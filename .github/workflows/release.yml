@@ -163,6 +163,7 @@ jobs:
               -DCMAKE_PREFIX_PATH="${{ steps.mount.outputs.mount_point }}"  \
               -DCMAKE_SYSTEM_NAME=Darwin                                    \
               -DCMAKE_OSX_ARCHITECTURES="arm64;x86_64"                      \
+              -DCMAKE_OSX_DEPLOYMENT_TARGET="10.15"                         \
               -Werror=dev                                                   \
               -B build_darwin
           cmake --build build_darwin --config Release --verbose
@@ -174,6 +175,7 @@ jobs:
               -DCMAKE_PREFIX_PATH="${{ steps.mount.outputs.mount_point }}/SDL3.xcframework/macos-arm64_x86_64"  \
               -DCMAKE_SYSTEM_NAME=Darwin                                                                        \
               -DCMAKE_OSX_ARCHITECTURES="arm64;x86_64"                                                          \
+              -DCMAKE_OSX_DEPLOYMENT_TARGET="10.15"                                                             \
               -Werror=dev                                                                                       \
               -B build_darwin_2
           cmake --build build_darwin --config Release --verbose
