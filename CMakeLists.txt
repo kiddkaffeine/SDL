@@ -5,9 +5,9 @@ if(CMAKE_CURRENT_SOURCE_DIR STREQUAL CMAKE_CURRENT_BINARY_DIR)
 endif()
 
 # This needs to be set before project() calls
-if(IOS OR TVOS)
+if(CMAKE_SYSTEM_NAME MATCHES "iOS" OR CMAKE_SYSTEM_NAME MATCHES "tvOS")
   set(CMAKE_OSX_DEPLOYMENT_TARGET "9.0" CACHE STRING "Minimum iOS/tvOS deployment version")
-elseif(VISIONOS)
+elseif(CMAKE_SYSTEM_NAME MATCHES "visionOS")
   set(CMAKE_OSX_DEPLOYMENT_TARGET "1.0" CACHE STRING "Minimum visionOS deployment version")
 elseif(APPLE)
   set(CMAKE_OSX_DEPLOYMENT_TARGET "10.11" CACHE STRING "Minimum macOS deployment version")
