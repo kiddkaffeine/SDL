@@ -1072,7 +1072,7 @@ static void IOS_MFIJoystickUpdate(SDL_Joystick *joystick)
                 } else {
                     down = buttons[key].isPressed;
                 }
-                SDL_SendJoystickButton(timestamp, joystick, button++, down); 
+                SDL_SendJoystickButton(timestamp, joystick, button++, down);  
             }
         } else if (controller.extendedGamepad) {
             bool isstack;
