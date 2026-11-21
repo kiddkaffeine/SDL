@@ -153,11 +153,11 @@ static bool SetupWindowData(SDL_VideoDevice *_this, SDL_Window *window, UIWindow
     data.uiwindow = uiwindow;
 
 #ifndef SDL_PLATFORM_VISIONOS
-    if (displaydata.uiscreen != [UIScreen mainScreen]) {
-        window->flags &= ~SDL_WINDOW_RESIZABLE;   // window is NEVER resizable
-        window->flags &= ~SDL_WINDOW_INPUT_FOCUS; // never has input focus
-        window->flags |= SDL_WINDOW_BORDERLESS;   // never has a status bar.
-    }
+    //if (displaydata.uiscreen != [UIScreen mainScreen]) {
+    //    window->flags &= ~SDL_WINDOW_RESIZABLE;   // window is NEVER resizable
+    //    window->flags &= ~SDL_WINDOW_INPUT_FOCUS; // never has input focus
+    //    window->flags |= SDL_WINDOW_BORDERLESS;   // never has a status bar.
+    //}
 #endif
 
 #if !defined(SDL_PLATFORM_TVOS) && !defined(SDL_PLATFORM_VISIONOS)
