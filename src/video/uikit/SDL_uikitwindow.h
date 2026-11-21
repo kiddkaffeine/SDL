@@ -54,6 +54,10 @@ extern NSUInteger UIKit_GetSupportedOrientations(SDL_Window *window);
 // Array of SDL_uikitviews owned by this window.
 @property(nonatomic, copy) NSMutableArray *views;
 
+@property(nonatomic, strong) UISceneSizeRestrictions *savedSizeRestrictions;
+@property(nonatomic) CGSize savedMinimumSize;
+@property(nonatomic) CGSize savedMaximumSize;
+
 @end
 
 #endif // SDL_uikitwindow_h_
