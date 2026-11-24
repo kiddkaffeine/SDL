@@ -36,6 +36,7 @@ extern void UIKit_HideWindow(SDL_VideoDevice *_this, SDL_Window *window);
 extern void UIKit_RaiseWindow(SDL_VideoDevice *_this, SDL_Window *window);
 extern void UIKit_SetWindowBordered(SDL_VideoDevice *_this, SDL_Window *window, bool bordered);
 extern void UIKit_SetWindowResizable(SDL_VideoDevice *_this, SDL_Window *window, bool resizable);
+extern void UIKit_UpdateWindowSizeLock(SDL_Window *window);
 extern SDL_FullscreenResult UIKit_SetWindowFullscreen(SDL_VideoDevice *_this, SDL_Window *window, SDL_VideoDisplay *display, SDL_FullscreenOp fullscreen);
 extern void UIKit_UpdatePointerLock(SDL_VideoDevice *_this, SDL_Window *window);
 extern void UIKit_DestroyWindow(SDL_VideoDevice *_this, SDL_Window *window);
@@ -55,11 +56,10 @@ extern NSUInteger UIKit_GetSupportedOrientations(SDL_Window *window);
 // Array of SDL_uikitviews owned by this window.
 @property(nonatomic, copy) NSMutableArray *views;
 
-// Scene's original size restrictions for resizing
-@property(nonatomic, strong) UISceneSizeRestrictions *savedSizeRestrictions
-    API_AVAILABLE(ios(13.0));
-@property(nonatomic) CGSize savedMinimumSize;
-@property(nonatomic) CGSize savedMaximumSize;
+// The scene's original size restrictions
+@property(nonatomic, assign) BOOL sizeLocked;
+@property(nonatomic, assign) CGSize savedMinimumSize;
+@property(nonatomic, assign) CGSize savedMaximumSize;
 
 @end
 
